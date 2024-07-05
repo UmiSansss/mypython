@@ -1,0 +1,14 @@
+def abc(num):
+    sum = 0
+    for i in range(num):
+        price = int(input("รับราคาสินค้า %d" % (i+1)))
+        sum += price
+    return sum
+
+def Tax (sum):
+    vat = sum*7/100
+    return vat
+
+num = int(input("จำนวนสินค้า"))
+print(abc(num))
+Tax(abc(num))
