@@ -1,0 +1,58 @@
+from machine import Pin
+from utime import sleep
+
+print("Meeboon O Yeah!")
+
+led = [15,18,22,23]
+for i in range(4):
+    led[i] = Pin(led[i], Pin.OUT)
+
+def fd():
+    for i in range(4):
+        led[i].on()
+        led[i].off()
+        sleep(0.1)
+
+def bk():
+    for i in range(3, -1, -1):
+        led[i].on()
+        led[i].off()
+        sleep(0.1)
+
+def mo():
+    led[1].on()
+    led[2].on()
+    sleep(0.1)
+    led[1].off()
+    led[2].off()
+    sleep(0.1)
+    led[0].on()
+    led[3].on()
+    sleep(0.1)
+    led[0].off()
+    led[3].off()
+    sleep(1)
+
+def mi():
+    led[3].on()
+    led[0].on()
+    sleep(0.1)
+    led[0].off()
+    led[3].off()
+    sleep(0.1)
+    led[1].on()
+    led[2].on()
+    sleep(0.1)
+    led[1].off()
+    led[2].off()
+    sleep(1)
+
+while True :
+    fd()
+    sleep(0.2)
+    bk()
+    sleep(0.2)
+    mo()
+    sleep(0.2)
+    mi()
+    sleep(0.2)
